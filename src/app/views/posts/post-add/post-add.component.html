@@ -1,0 +1,29 @@
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Add new post</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="name">Title : </label>
+                        <input [ngClass]="{'is-invalid': submitted && f.title.errors }" class="form-control" id="title" type="text" formControlName="title">
+                    <div *ngIf=" submitted && f.title.errors" class="invalid-feedback">
+                        <div *ngIf="profileForm.controls['title']?.errors">Title is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="postTitle">Description : </label>
+                    <textarea [ngClass]="{'is-invalid': submitted && f.description.errors }" class="form-control" formControlName="description" rows="6" ></textarea>
+                    <div *ngIf=" submitted && f.description.errors" class="invalid-feedback">
+                        <div *ngIf="profileForm.controls['description']?.errors">Description is required</div>
+                    </div>
+                </div>
+                <!-- <button type="submit" [disabled]="!profileForm.valid" type="submit" class="btn btn-primary">Sumbit</button> -->
+                <button type="submit" type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
+</div>

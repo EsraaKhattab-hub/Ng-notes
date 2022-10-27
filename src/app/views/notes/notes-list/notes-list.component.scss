@@ -1,0 +1,17 @@
+.card-body .card-title a {
+    color:#888;
+    transition: 0.5s;
+}
+.card-body:hover a{
+    display: inline-block !important;
+    transition: 0.5s;
+}
+.card-body a.delete-item {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+.card {
+    background: #fafafa;
+}
+
